@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-title>Nova Venda</mat-card-title>
+    <form #f="ngForm" autocomplete="off">
+        <mat-form-field appearance="fill">
+          <mat-label>Produtos</mat-label>
+          <mat-select #matSelectProduto required>
+            <mat-option *ngFor="let produto of produtos" [value]="produto.idProduto" required>
+              {{produto.dscProduto}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Clientes</mat-label>
+            <mat-select  #matSelectCliente required>
+              <mat-option *ngFor="let cliente of clientes" [value]="cliente.idCliente" required>
+                {{cliente.nmCliente}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Quantidade" [(ngModel)]="qtdVenda" name="qtdVenda" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Valor Unitario" [(ngModel)]="vlrUnitarioVenda" name="vlrUnitarioVenda" required>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button (click)="criarVenda()" color="primary" [disabled]="!f.valid">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="calcel()" color="primary">
+        Voltar
+    </button>
+</mat-card>
+
+

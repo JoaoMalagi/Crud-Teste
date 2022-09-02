@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Editar Produto</mat-card-title>
+    <form #f="ngForm" autocomplete="off">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="cliente.nmCliente" name="nmCliente" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="cliente.cidade" name="Cidade" required>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="updateCliente()" color="primary" [disabled]="!f.valid">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" color="primary">
+        Voltar
+    </button>
+</mat-card>
+
+

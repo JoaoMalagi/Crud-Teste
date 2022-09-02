@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Editar Produto</mat-card-title>
+    <form #f="ngForm" autocomplete="off">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="produto.dscProduto" name="dscProduto" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Preço" [(ngModel)]="produto.vlrProduto" name="vlrProduto" required>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="updateProduto()" color="primary" [disabled]="!f.valid">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" color="primary">
+        Voltar
+    </button>
+</mat-card>
+
+

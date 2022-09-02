@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>Nova Venda</mat-card-title>
+    <form #f="ngForm" autocomplete="off">
+        <mat-form-field>
+            <input matInput placeholder="Quantidade" [(ngModel)]="venda.qtdVenda" name="qtdVenda" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Valor Unitario" [(ngModel)]="venda.vlrUnitarioVenda" name="vlrUnitarioVenda" required>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button (click)="updateVenda()" color="primary" [disabled]="!f.valid">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancelar()" color="primary">
+        Voltar
+    </button>
+</mat-card>
+
+

@@ -1,0 +1,72 @@
+<div class="center">
+  <mat-form-field>
+    <input matInput placeholder="Buscar"  name="dscProduto" [(ngModel)]="busca">
+</mat-form-field>
+
+<button class="buscar" mat-raised-button  color="primary" (click)="buscar()">
+    Buscar
+</button>
+</div>
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="vendas">
+      
+      <!-- nmCliente Column -->
+      <ng-container matColumnDef="nmCliente">
+        <th mat-header-cell *matHeaderCellDef >Cliente</th>
+        <td mat-cell *matCellDef="let row">{{row.nmCliente}}</td>
+      </ng-container>
+
+       <!-- dscProduto Column -->
+       <ng-container matColumnDef="dscProduto">
+        <th mat-header-cell *matHeaderCellDef >Produto</th>
+        <td mat-cell *matCellDef="let row">{{row.dscProduto}}</td>
+      </ng-container>
+
+      <!-- qtdVenda Column -->
+      <ng-container matColumnDef="qtdVenda">
+        <th mat-header-cell *matHeaderCellDef >Quantidade</th>
+        <td mat-cell *matCellDef="let row">{{row.qtdVenda}}</td>
+      </ng-container>
+
+      <!-- dthVenda Column -->
+      <ng-container matColumnDef="dthVenda">
+        <th mat-header-cell *matHeaderCellDef >Data</th>
+        <td mat-cell *matCellDef="let row">{{row.dthVenda | date:'dd/MM/yyyy'}}</td>
+      </ng-container>
+
+      <!-- vlrUnitario Column -->
+      <ng-container matColumnDef="vlrUnitarioVenda">
+        <th mat-header-cell *matHeaderCellDef >Valor Unitário</th>
+        <td mat-cell *matCellDef="let row">{{row.vlrUnitarioVenda}}</td>
+      </ng-container>
+
+       <!-- vlrTotalVenda Column -->
+       <ng-container matColumnDef="vlrTotalVenda">
+        <th mat-header-cell *matHeaderCellDef >Total</th>
+        <td mat-cell *matCellDef="let row">{{row.vlrTotalVenda}}</td>
+      </ng-container>
+
+       <!-- vlrProduto Column -->
+       <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef >Ações</th>
+        <td mat-cell *matCellDef="let row">
+            <a routerLink="" (click)="edit(row.idVenda)"
+            class="edit">
+                <i class="material-icons">
+                    edit
+                </i>
+            </a>
+            <a (click)="delete(row.idVenda)"
+            class="delete">
+                <i id="icone-delete" class="material-icons delete">
+                    delete
+                </i>
+            </a>
+    </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-title>Novo Cliente</mat-card-title>
+    <form #f="ngForm" autocomplete="off">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="nmCliente" name="nmCliente" required="Obrigatório">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" [(ngModel)]="cidade" name="cidade" required="Obrigatório">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="criarCliente()" color="primary" [disabled]="!f.valid">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="calcel()" color="primary">
+        Voltar
+    </button>
+</mat-card>
+

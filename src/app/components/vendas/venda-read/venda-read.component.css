@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+}
+.edit {
+    margin-right: 10px;
+}
+
+.edit > i{
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #e35e6b;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 20px;
+}
+button {
+    margin-left: 20px;
+}
+
+#icone-delete {
+    cursor: pointer;
+}
