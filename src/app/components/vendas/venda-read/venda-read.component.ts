@@ -39,7 +39,7 @@ export class VendaReadComponent implements OnInit {
        
      this.vendaService.delete(id).subscribe(() => {
 
-     this.vendaService.showMessage('Operação executada com sucesso')
+     this.vendaService.showMessage('Operação executada com sucessos')
      this.vendaService.read().subscribe(vendas => {
       this.vendas = vendas
     })
